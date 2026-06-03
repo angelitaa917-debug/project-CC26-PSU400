@@ -38,14 +38,14 @@ html, body, [class*="css"] {
 
 /* Background */
 .stApp {
-    background: #0d0f1a;
-    color: #e8eaf0;
+    background: #F8F9FA;
+    color: #1A1A2E;
 }
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background: #111320 !important;
-    border-right: 1px solid #1e2235;
+    background: #FFFFFF !important;
+    border-right: 1px solid #DEE2E6;
 }
 
 /* Title */
@@ -53,7 +53,7 @@ html, body, [class*="css"] {
     font-family: 'Space Mono', monospace;
     font-size: 2.6rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #7ee8fa 0%, #80ff72 100%);
+    background: linear-gradient(135deg, #1565C0 0%, #00ACC1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -62,7 +62,7 @@ html, body, [class*="css"] {
 }
 .hero-sub {
     font-size: 1rem;
-    color: #6b7280;
+    color: #6C757D;
     font-weight: 300;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -71,30 +71,31 @@ html, body, [class*="css"] {
 
 /* Metric cards */
 .metric-card {
-    background: linear-gradient(135deg, #161929 0%, #1a1f35 100%);
-    border: 1px solid #252b45;
+    background: #FFFFFF;
+    border: 1px solid #DEE2E6;
     border-radius: 16px;
     padding: 1.2rem 1.4rem;
     text-align: center;
     transition: border-color 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
-.metric-card:hover { border-color: #7ee8fa55; }
+.metric-card:hover { border-color: #1565C0; box-shadow: 0 4px 12px rgba(21,101,192,0.12); }
 .metric-label {
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #5c6380;
+    color: #6C757D;
     margin-bottom: 0.3rem;
 }
 .metric-value {
     font-family: 'Space Mono', monospace;
     font-size: 2rem;
     font-weight: 700;
-    color: #7ee8fa;
+    color: #1565C0;
 }
 .metric-delta {
     font-size: 0.78rem;
-    color: #80ff72;
+    color: #2E7D32;
     margin-top: 0.15rem;
 }
 
@@ -103,29 +104,29 @@ html, body, [class*="css"] {
     font-family: 'Space Mono', monospace;
     font-size: 1rem;
     letter-spacing: 0.1em;
-    color: #7ee8fa;
+    color: #1565C0;
     text-transform: uppercase;
-    border-left: 3px solid #7ee8fa;
+    border-left: 3px solid #1565C0;
     padding-left: 0.75rem;
     margin: 1.8rem 0 1rem 0;
 }
 
 /* Insight boxes */
 .insight-box {
-    background: #0f1526;
-    border: 1px solid #1e2a42;
-    border-left: 4px solid #80ff72;
+    background: #E8F4FD;
+    border: 1px solid #BEE3F8;
+    border-left: 4px solid #2E7D32;
     border-radius: 8px;
     padding: 0.9rem 1.1rem;
     font-size: 0.88rem;
-    color: #b0bcd4;
+    color: #1A1A2E;
     margin-top: 0.7rem;
 }
 
 /* Fatigue badge */
-.badge-refreshed { background:#0d2e1a; color:#4ade80; border:1px solid #22c55e; border-radius:20px; padding:3px 14px; font-size:0.78rem; }
-.badge-strained   { background:#2e2200; color:#fbbf24; border:1px solid #f59e0b; border-radius:20px; padding:3px 14px; font-size:0.78rem; }
-.badge-burnout    { background:#2e0d0d; color:#f87171; border:1px solid #ef4444; border-radius:20px; padding:3px 14px; font-size:0.78rem; }
+.badge-refreshed { background:#E8F5E9; color:#2E7D32; border:1px solid #A5D6A7; border-radius:20px; padding:3px 14px; font-size:0.78rem; }
+.badge-strained   { background:#FFF8E1; color:#F57F17; border:1px solid #FFE082; border-radius:20px; padding:3px 14px; font-size:0.78rem; }
+.badge-burnout    { background:#FFEBEE; color:#C62828; border:1px solid #EF9A9A; border-radius:20px; padding:3px 14px; font-size:0.78rem; }
 
 /* Plotly chart background */
 .js-plotly-plot .plotly { background: transparent !important; }
@@ -135,7 +136,7 @@ html, body, [class*="css"] {
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #4b5580;
+    color: #6C757D;
     margin-bottom: 0.2rem;
 }
 </style>
@@ -144,12 +145,12 @@ html, body, [class*="css"] {
 # ──────────────────────────────────────────────
 # PLOTLY THEME
 # ──────────────────────────────────────────────
-PLOT_BG   = "rgba(0,0,0,0)"
-PAPER_BG  = "rgba(0,0,0,0)"
-GRID_COL  = "#1e2340"
-TEXT_COL  = "#8891b0"
+PLOT_BG   = "#FFFFFF"
+PAPER_BG  = "#F8F9FA"
+GRID_COL  = "#E9ECEF"
+TEXT_COL  = "#495057"
 FONT_FAM  = "DM Sans"
-PALETTE   = {"refreshed": "#4ade80", "strained": "#fbbf24", "near-burnout": "#f87171"}
+PALETTE   = {"refreshed": "#2E7D32", "strained": "#F57F17", "near-burnout": "#C62828"}
 
 def apply_dark_theme(fig, height=380):
     fig.update_layout(
