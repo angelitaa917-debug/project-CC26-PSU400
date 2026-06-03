@@ -321,7 +321,7 @@ if page == "📊 Overview":
             textposition="outside",
             hovertemplate="<b>%{label}</b><br>Jumlah: %{value:,}<br>Persen: %{customdata[0]:.1f}%<extra></extra>",
         )
-        apply_dark_theme(fig_pie, height=340)
+        apply_light_theme(fig_pie, height=340)
         fig_pie.add_annotation(
             text=f"<b>{len(df):,}</b><br>Responden",
             x=0.5, y=0.5, font_size=14,
@@ -344,7 +344,7 @@ if page == "📊 Overview":
             )
             fig_mood.update_traces(texttemplate="%{text:,}", textposition="outside")
             fig_mood.update_layout(coloraxis_showscale=False, yaxis_title="", xaxis_title="Jumlah")
-            apply_dark_theme(fig_mood, height=340)
+            apply_light_theme(fig_mood, height=340)
             st.plotly_chart(fig_mood, use_container_width=True)
         else:
             st.info("Kolom 'mood' tidak tersedia.")
@@ -358,7 +358,7 @@ if page == "📊 Overview":
         points="outliers",
         category_orders={"fatigue_level": ["refreshed", "strained", "near-burnout"]},
     )
-    apply_dark_theme(fig_box, height=340)
+    apply_light_theme(fig_box, height=340)
     st.plotly_chart(fig_box, use_container_width=True)
 
     st.markdown("""
@@ -393,7 +393,7 @@ elif page == "🔍 EDA & Distribusi":
             category_orders={"fatigue_level": ["refreshed", "strained", "near-burnout"]},
         )
         fig_hist.update_layout(title=f"Distribusi {selected_num} per Fatigue Level")
-        apply_dark_theme(fig_hist, 380)
+        apply_light_theme(fig_hist, 380)
         st.plotly_chart(fig_hist, use_container_width=True)
 
     with col2:
@@ -406,7 +406,7 @@ elif page == "🔍 EDA & Distribusi":
             category_orders={"fatigue_level": ["refreshed", "strained", "near-burnout"]},
         )
         fig_vio.update_layout(title=f"Violin Plot: {selected_num}")
-        apply_dark_theme(fig_vio, 380)
+        apply_light_theme(fig_vio, 380)
         st.plotly_chart(fig_vio, use_container_width=True)
 
     # Statistik Deskriptif
@@ -445,7 +445,7 @@ elif page == "🔍 EDA & Distribusi":
             category_orders={"fatigue_level": ["refreshed","strained","near-burnout"]},
         )
         fig_bin.update_layout(xaxis_title="Screen Time (jam/hari)", yaxis_title="Jumlah Responden")
-        apply_dark_theme(fig_bin, 360)
+        apply_light_theme(fig_bin, 360)
         st.plotly_chart(fig_bin, use_container_width=True)
 
         st.markdown("""
@@ -479,7 +479,7 @@ elif page == "🤝 Korelasi & RQ":
         textfont=dict(size=11),
         hovertemplate="<b>%{x}</b> × <b>%{y}</b><br>r = %{z:.3f}<extra></extra>",
     ))
-    apply_dark_theme(fig_heat, 420)
+    apply_light_theme(fig_heat, 420)
     st.plotly_chart(fig_heat, use_container_width=True)
 
     # ── RQ 1 – Scatter screen_time vs fatigue_score
@@ -497,7 +497,7 @@ elif page == "🤝 Korelasi & RQ":
                 trendline_color_override="#ffffff",
                 category_orders={"fatigue_level": ["refreshed","strained","near-burnout"]},
             )
-            apply_dark_theme(fig_sc, 380)
+            apply_light_theme(fig_sc, 380)
             st.plotly_chart(fig_sc, use_container_width=True)
     with col2:
         st.markdown("""
@@ -524,7 +524,7 @@ elif page == "🤝 Korelasi & RQ":
         )
         fig_sleep.update_traces(line_color="#7ee8fa", marker_color="#80ff72", marker_size=10)
         fig_sleep.update_layout(xaxis_title="Durasi Tidur (jam)", yaxis_title="Rata-rata Wellness Index")
-        apply_dark_theme(fig_sleep, 340)
+        apply_light_theme(fig_sleep, 340)
         st.plotly_chart(fig_sleep, use_container_width=True)
         st.markdown("""
         <div class="insight-box">
@@ -546,7 +546,7 @@ elif page == "🤝 Korelasi & RQ":
             trendline_scope="overall",
             trendline_color_override="#ffffff",
         )
-        apply_dark_theme(fig_str, 360)
+        apply_light_theme(fig_str, 360)
         st.plotly_chart(fig_str, use_container_width=True)
 
     with col4:
@@ -561,7 +561,7 @@ elif page == "🤝 Korelasi & RQ":
             )
             fig_prof.update_layout(title="Profil Kebiasaan per Mood",
                                    xaxis_title="", yaxis_title="Rata-rata Nilai")
-            apply_dark_theme(fig_prof, 360)
+            apply_light_theme(fig_prof, 360)
             st.plotly_chart(fig_prof, use_container_width=True)
 
     # ── RQ 5 – Physical Activity Mitigasi Screen Time
@@ -584,7 +584,7 @@ elif page == "🤝 Korelasi & RQ":
             markers=True, line_shape="spline",
         )
         fig_rq5.update_layout(xaxis_title="Screen Time (jam)", yaxis_title="Rata-rata Wellness Index")
-        apply_dark_theme(fig_rq5, 360)
+        apply_light_theme(fig_rq5, 360)
         st.plotly_chart(fig_rq5, use_container_width=True)
         st.markdown("""
         <div class="insight-box">
@@ -611,7 +611,7 @@ elif page == "🤝 Korelasi & RQ":
         ))
         fig_rq6.update_layout(xaxis_title="Koefisien Korelasi Pearson",
                                xaxis=dict(range=[-1,1], gridcolor=GRID_COL))
-        apply_dark_theme(fig_rq6, 340)
+        apply_light_theme(fig_rq6, 340)
         st.plotly_chart(fig_rq6, use_container_width=True)
 
 
