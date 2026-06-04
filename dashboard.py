@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore")
 # PAGE CONFIG
 # ──────────────────────────────────────────────
 st.set_page_config(
-    page_title="CogniTrack Dashboard",
+    page_title="CogniCare Dashboard",
     page_icon="🧠",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -266,7 +266,7 @@ with st.sidebar:
 # ──────────────────────────────────────────────
 # MAIN CONTENT
 # ──────────────────────────────────────────────
-st.markdown('<div class="hero-title">🧠 CogniTrack</div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-title">🧠 CogniCare</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-sub">Cognitive Fatigue & Digital Habits — Analytic Dashboard</div>', unsafe_allow_html=True)
 
 if not data_loaded or df is None:
